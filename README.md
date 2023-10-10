@@ -4,6 +4,8 @@
 
 - Instalar el servidor de aplicación: pip install uvicorn
 
+- Instalar libreria: pip install openai
+
 - Levantar o Iniciar el servidor: uvicorn main:app --port 3002 (es el puerto)
 
 - Detener el servidor: CTRL+C
