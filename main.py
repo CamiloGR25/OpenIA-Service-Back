@@ -2,8 +2,20 @@ import os
 import openai
 from fastapi import FastAPI  # importar fastApi
 from decouple import config # imnportar el funcionamiento de variable entorno
+from fastapi.middleware.cors import CORSMiddleware #importa permisos de conexion con el front
 
 app = FastAPI()  # Inicia el servidor de la app
+
+
+# Dar permiso al front para conectarse con el Back y sus configuraciones:
+app.add_middleware( 
+    CORSMiddleware,
+    allow_origins=["*"],  # O reemplaza "*" con la lista de orígenes permitidos.
+    allow_methods=["*"],  # O reemplaza "*" con la lista de métodos permitidos (por ejemplo, ["GET", "POST"]).
+    allow_headers=["*"],  # O reemplaza "*" con la lista de encabezados permitidos.
+    allow_credentials=True,  # Habilita la inclusión de credenciales (cookies, encabezados de autorización, etc.).
+    expose_headers=["*"],  # O reemplaza "*" con la lista de encabezados expuestos.
+)
 
 @app.get("/")
 def root():  # Inicializa todo
