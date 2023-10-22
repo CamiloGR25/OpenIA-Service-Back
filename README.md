@@ -9,3 +9,5 @@
 - Levantar o Iniciar el servidor: uvicorn main:app --port 3002 (es el puerto)
 
 - Detener el servidor: CTRL+C
+
+- Variables de entorno: pip install python-dotenv python-decouple
